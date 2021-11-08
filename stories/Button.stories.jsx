@@ -1,40 +1,31 @@
 import React from 'react';
+import { Button } from '@chakra-ui/react';
+import theme from '../styles/theme';
 
-import { Button } from './Button';
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+	title: 'Components/Button',
+	component: Button,
+	description: "A button, a button!",
+	argTypes: {
+		colorScheme: {
+			options: Object.keys(theme.colors),
+			type: 'select',
+			description: 'Chakra Themed Colors',
+		},
+		label: {
+			type: 'string',
+			description: 'Text Content',
+		}
+	},
 };
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Button {...args} />;
+const Template = ({ label, ...props }) => {
+	return (<Button {...props}>{label}</Button>)
+};
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
-  label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+	label: 'Button',
+	colorScheme: 'red',
 };
