@@ -41,8 +41,8 @@ Primary.args = {
 	variant: 'solid'
 };
 
-export const Pagination = Template.bind({});
-Pagination.args = {
-	label: '1',
-	variant: 'pagination',
-};
+// export const Pagination = Template.bind({});
+// Pagination.args = {
+// 	label: '1',
+// 	variant: 'pagination',
+// };
