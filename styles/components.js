@@ -1,0 +1,41 @@
+import { EmailIcon } from '@chakra-ui/icons'
+
+const Button = {
+    baseStyle: {
+        fontWeight: "medium",
+        borderRadius: "full",
+        textTransform: "uppercase",
+    },
+    sizes: {
+        md: {
+            fontSize: "18px",
+            padding: "15px 30px 15px 30px",
+        },
+        lg: {
+            padding: "20px 40px",
+            fontSize: "24px"
+        }
+    },
+    variants: {
+        featured: {
+            bg: "black",
+            color: "white",
+        }
+    },
+    defaultProps: {
+        size: "md",
+        colorScheme: "aquagreen",
+        variant: "solid"
+    }
+};
+
+
+
+
+
+
+
+const components = {
+    Button
+};
+export default components;

@@ -1,11 +1,18 @@
 # Wordpress Dawn
-
+Wordpress Dawn is a bundled starter package for headless Wordpress development using Next.js, Apollo, Chakra UI and Storybook.
 
 ## Introduction
 
 
-## Roadmap
-
+## Roadmap/TODO
+- [ ] Install Apollo Client
+- [ ] Create standard wordpress-like components
+- [ ] Create standard theming template
+- [ ] Add standard components storybook
+- [ ] Add controls for standard components
+- [ ] Create basic website using component library and theming
+- [ ] Write SOP and comment code
+- [ ] Publish as standard package
 
 ### Goal
 I want to create a bundled package to simplify the process of creating a new headless wordpress site from mockup.
@@ -21,7 +28,7 @@ I want to create a bundled package to simplify the process of creating a new hea
   - Yarn instead of NPM for dependency management
   - Next.JS (SSG Wordpress Bundle)
   - Apollo GraphQL for dynamic data fetching
-  - CSS library (like Tailwind) for styling
+  - Chakra UI for styling and theming
 
 - Wordpress Plugins
   - Dawn Core
@@ -34,4 +41,5 @@ I want to create a bundled package to simplify the process of creating a new hea
   - Yoast Duplicate Post
 
 
-  
+## Contributing
+@todo

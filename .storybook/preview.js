@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import theme from '@chakra-ui/theme'
+import theme from '../styles/theme'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 export const parameters = {
 	actions: {
@@ -13,7 +13,8 @@ export const parameters = {
 	},
 	viewport: {
 		viewports: INITIAL_VIEWPORTS,
-	}
+	},
+	layout: 'centered',
 }
 
 export const decorators = [
