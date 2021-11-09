@@ -20,19 +20,26 @@ const Button = {
         featured: {
             bg: "black",
             color: "white",
+        },
+        pagination: {
+            bg: "beige",
+            borderColor: "black",
+            borderWidth: "1px",
+            color: "black",
+            borderRadius: "0",
+            padding: "25px 18px",
+            fontSize: "24px",
+            _hover: {
+                bg: "white"
+            }
         }
     },
     defaultProps: {
         size: "md",
-        colorScheme: "aquagreen",
-        variant: "solid"
+        colorScheme: "parrotgreen",
+        variant: "pagination",
     }
 };
-
-
-
-
-
 
 
 const components = {

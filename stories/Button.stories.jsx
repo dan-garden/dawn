@@ -8,7 +8,6 @@ console.log(theme.components.Button);
 export default {
 	title: 'Components/Button',
 	component: Button,
-	description: "A button, a button!",
 	argTypes: {
 		colorScheme: {
 			options: Object.keys(theme.colors),
@@ -39,7 +38,11 @@ const Template = ({ label, ...props }) => {
 export const Primary = Template.bind({});
 Primary.args = {
 	label: 'Button',
-	variant: theme.components.Button.defaultProps.variant,
-	colorScheme: theme.components.Button.defaultProps.colorScheme,
-	size: theme.components.Button.defaultProps.size,
+	variant: 'solid'
+};
+
+export const Pagination = Template.bind({});
+Pagination.args = {
+	label: '1',
+	variant: 'pagination',
 };
