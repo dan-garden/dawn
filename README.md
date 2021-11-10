@@ -44,7 +44,9 @@ Dawn is a bundled starter package for headless Wordpress development using Next.
 - Yarn instead of NPM for dependency management
 - Next.JS (SSG Wordpress Bundle)
 - Apollo GraphQL for dynamic data fetching
-- Chakra UI for styling and theming
+<!-- - Chakra UI for styling and theming -->
+- Tailwind CSS for styling
+- Kitwind for a component library [https://kitwind.io/products/kometa/components](Kitwind)
 
 #### Wordpress Plugins
 - Dawn Core

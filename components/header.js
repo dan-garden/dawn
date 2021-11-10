@@ -1,7 +1,10 @@
 import Link from 'next/link'
+import Navigation from './Navigation';
 
 export default function Header() {
   return (
-    <header>This is the header</header>
+    <header>
+      <Navigation />
+    </header>
   )
 }
