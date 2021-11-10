@@ -6,8 +6,5 @@ module.exports = {
             'dawn-backend.local',
             '0.gravatar.com'
         ],
-    },
-    sassOptions: {
-        includePaths: [path.join(__dirname, 'styles')],
-    },
+    }
 }

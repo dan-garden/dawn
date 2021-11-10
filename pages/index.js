@@ -6,8 +6,9 @@ export default function Index() {
 		<>
 		<Layout>
 			<Head>
-			<title>Home</title>
+				<title>Home</title>
 			</Head>
+			<button className="btn btn-green">Button</button>
 		</Layout>
 		</>
 	)

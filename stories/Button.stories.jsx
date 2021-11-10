@@ -10,7 +10,7 @@ export default {
 };
 
 const Template = ({ label, ...props }) => {
-	return (<button {...props}>{label}</button>)
+	return (<button className="btn btn-green" {...props}>{label}</button>)
 };
 
 export const Primary = Template.bind({});
