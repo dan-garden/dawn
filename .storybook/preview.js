@@ -1,5 +1,3 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from '../styles/theme'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 export const parameters = {
 	actions: {
@@ -19,10 +17,6 @@ export const parameters = {
 
 export const decorators = [
 	Story => {
-		return (
-			<ChakraProvider theme={theme}>
-				<Story />
-		 	</ChakraProvider>
-		);
+		return (<Story />);
 	}
 ];
