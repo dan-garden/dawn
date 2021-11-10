@@ -1,5 +1,10 @@
 import Link from "next/link";
+import Navigation from "./Navigation";
 
 export default function Header() {
-  return <header>{/* <Navigation /> */}</header>;
+  return (
+    <header>
+      <Navigation />
+    </header>
+  );
 }
