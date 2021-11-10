@@ -4,10 +4,10 @@ module.exports = {
   mode: 'jit',
   theme: {
     screens: {
-      'laptop': {'max': '1535px'}, //sm
-      'ltablet': {'max': '1279px'}, //md
-      'ptablet': {'max': '1023px'}, //lg
-      'mobile': {'max': '767px'},
+      'laptop': {'max': '1535px'},
+      'ltablet': {'max': '1279px'}, //sm
+      'ptablet': {'max': '1023px'},//md
+      'mobile': {'max': '767px'},//lg
     }
   },
   variants: {
