@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pretty": "yarn prettier --write . ",
+    "pretty": "prettier-cli-watcher --configpath='./.prettierrc.js' --dir='.'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -44,6 +44,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
     "postcss": "^8.3.11",
+    "prettier-cli-watcher": "^1.0.5",
     "tailwindcss": "^2.2.19"
   }
 }
