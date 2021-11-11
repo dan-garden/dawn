@@ -5,13 +5,13 @@
 @tailwind utilities;
 
 .navigation-container {
-    @apply px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8;
+  @apply px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8;
 }
 
 .btn {
-    @apply py-2 px-4 font-semibold rounded-lg shadow-md;
+  @apply py-2 px-4 font-semibold rounded-lg shadow-md;
 }
 
 .btn-green {
-    @apply text-white bg-green-500 hover:bg-green-700;
+  @apply text-white bg-green-500 hover:bg-green-700;
 }
