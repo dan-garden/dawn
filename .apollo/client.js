@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const API_URL = process.env.WORDPRESS_API_URL;
 const client = new ApolloClient({

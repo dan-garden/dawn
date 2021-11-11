@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .navigation-container {
-  @apply px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8;
+    @apply px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8;
 }
 
 .btn {
-  @apply py-2 px-4 font-semibold rounded-lg shadow-md;
+    @apply py-2 px-4 font-semibold rounded-lg shadow-md;
 }
 
 .btn-green {
-  @apply text-white bg-green-500 hover:bg-green-700;
+    @apply text-white bg-green-500 hover:bg-green-700;
 }
