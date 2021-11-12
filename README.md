@@ -49,7 +49,9 @@ Dawn is a bundled starter package for headless Wordpress development using Next.
 - Apollo GraphQL for dynamic data fetching
 <!-- - Chakra UI for styling and theming -->
 - Tailwind CSS for styling
-- Kitwind for a component library [https://kitwind.io/products/kometa/components](Kitwind)
+- Kitwind for a structural component library [https://kitwind.io/products/kometa/components](Kitwind)
+- Hero Icons, an icon library that works nicely with Tailwind. [https://heroicons.com/](Hero Icons)
+- Headless UI for a more functional component library [https://headlessui.dev/react/disclosure](Headless UI)
 
 #### Wordpress Plugins
 
