@@ -1,23 +1,42 @@
-import { useState } from 'react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import { Menu, Transition } from '@headlessui/react';
+import { MenuIcon, XIcon, ChevronDownIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
 const navStructure = [
   {
     href: '/',
-    label: 'Link 1',
+    label: 'Menu Item 1',
   },
   {
     href: '/',
-    label: 'Link 2',
+    label: 'Menu Item 2',
   },
   {
     href: '/',
-    label: 'Link 3',
+    label: 'Menu Item 3',
+    children: [
+      {
+        href: '/',
+        label: 'Child Item 1',
+      },
+      {
+        href: '/',
+        label: 'Child Item 2',
+      },
+      {
+        href: '/',
+        label: 'Child Item 3',
+      },
+      {
+        href: '/',
+        label: 'Child Item 4',
+      },
+    ],
   },
   {
     href: '/',
-    label: 'Link 4',
+    label: 'Menu Item 4',
   },
   // {
   //   href: "/",
@@ -25,17 +44,66 @@ const navStructure = [
   // }
 ];
 
+const Submenu = props => {
+  const { item } = props;
+  return (
+    <div className="inline">
+      <Menu as="div" className="relative inline-block text-left">
+        <div>
+          <Menu.Button className="inline menu-link">
+            {item.label}
+            <ChevronDownIcon
+              className="w-5 h-5 ml-2 -mr-1 inline-block text-violet-200 hover:text-violet-100"
+              aria-hidden="true"
+            />
+          </Menu.Button>
+        </div>
+        <Transition
+          as={Fragment}
+          enter="transition ease-out duration-100"
+          enterFrom="transform opacity-0 scale-95"
+          enterTo="transform opacity-100 scale-100"
+          leave="transition ease-in duration-75"
+          leaveFrom="transform opacity-100 scale-100"
+          leaveTo="transform opacity-0 scale-95">
+          <Menu.Items className="sub-menu">
+            <div className="px-1 py-1 ">
+              {item.children.map((subItem, subItemIndex) => {
+                return (
+                  <Menu.Item key={'sub-item-' + subItemIndex}>
+                    {({ active }) => (
+                      <Link href={subItem.href} passHref>
+                        <a
+                          href="replace"
+                          aria-label={subItem.label}
+                          className="sub-menu-link">
+                          {subItem.label}
+                        </a>
+                      </Link>
+                    )}
+                  </Menu.Item>
+                );
+              })}
+            </div>
+          </Menu.Items>
+        </Transition>
+      </Menu>
+    </div>
+  );
+};
+
 const NavLinks = () => {
   return navStructure.map((item, itemIndex) => (
-    <li key={'nav' + itemIndex}>
-      <Link href={item.href} passHref>
-        <a
-          href="replace"
-          aria-label={item.label}
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
-          {item.label}
-        </a>
-      </Link>
+    <li key={'menu-item-' + itemIndex}>
+      {item.children ? (
+        <Submenu item={item} />
+      ) : (
+        <Link href={item.href} passHref>
+          <a href="replace" aria-label={item.label} className="menu-link">
+            {item.label}
+          </a>
+        </Link>
+      )}
     </li>
   ));
 };
@@ -94,7 +162,7 @@ export default function Navigation() {
           <button
             aria-label="Open Menu"
             title="Open Menu"
-            className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
+            className="menu-open"
             onClick={() => setIsMenuOpen(true)}>
             <MenuIcon className="w-5 text-gray-600" />
           </button>

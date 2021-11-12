@@ -8,6 +8,22 @@
   @apply px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8;
 }
 
+.menu-open {
+  @apply p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50;
+}
+
+.menu-link {
+  @apply font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400;
+}
+
+.sub-menu {
+  @apply static lg:absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md ring-0 shadow-none lg:shadow-lg lg:ring-1 lg:ring-black lg:ring-opacity-5 focus:outline-none;
+}
+
+.sub-menu-link {
+  @apply flex rounded-md items-center w-full px-2 py-2 text-sm tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400;
+}
+
 .btn {
   @apply py-2 px-4 font-semibold rounded-lg shadow-md;
 }
