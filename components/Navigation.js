@@ -3,47 +3,6 @@ import { Menu, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon, ChevronDownIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
-const navStructure = [
-  {
-    href: '/',
-    label: 'Menu Item 1',
-  },
-  {
-    href: '/',
-    label: 'Menu Item 2',
-  },
-  {
-    href: '/',
-    label: 'Menu Item 3',
-    children: [
-      {
-        href: '/',
-        label: 'Child Item 1',
-      },
-      {
-        href: '/',
-        label: 'Child Item 2',
-      },
-      {
-        href: '/',
-        label: 'Child Item 3',
-      },
-      {
-        href: '/',
-        label: 'Child Item 4',
-      },
-    ],
-  },
-  {
-    href: '/',
-    label: 'Menu Item 4',
-  },
-  // {
-  //   href: "/",
-  //   label: "Sign up"
-  // }
-];
-
 const Submenu = props => {
   const { item } = props;
   return (
@@ -72,12 +31,12 @@ const Submenu = props => {
                 return (
                   <Menu.Item key={'sub-item-' + subItemIndex}>
                     {({ active }) => (
-                      <Link href={subItem.href} passHref>
+                      <Link href={subItem?.href || '#'} passHref>
                         <a
                           href="replace"
-                          aria-label={subItem.label}
+                          aria-label={subItem?.label}
                           className="sub-menu-link">
-                          {subItem.label}
+                          {subItem?.label}
                         </a>
                       </Link>
                     )}
@@ -92,15 +51,17 @@ const Submenu = props => {
   );
 };
 
-const NavLinks = () => {
-  return navStructure.map((item, itemIndex) => (
+const NavLinks = props => {
+  const { structure } = props;
+
+  return structure?.map((item, itemIndex) => (
     <li key={'menu-item-' + itemIndex}>
       {item.children ? (
         <Submenu item={item} />
       ) : (
-        <Link href={item.href} passHref>
-          <a href="replace" aria-label={item.label} className="menu-link">
-            {item.label}
+        <Link href={item?.href || '#'} passHref>
+          <a href="replace" aria-label={item?.label} className="menu-link">
+            {item?.label}
           </a>
         </Link>
       )}
@@ -138,14 +99,15 @@ const Logo = () => {
   );
 };
 
-export default function Navigation() {
+export default function Navigation(props) {
+  const { structure } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="navigation-container">
       <div className="relative flex items-center justify-between">
         <Logo />
-        <ul className="flex items-center hidden space-x-8 lg:flex">
-          <NavLinks />
+        <ul className="flex items-center space-x-8 lg:flex">
+          <NavLinks structure={structure} />
           <li>
             <Link href="/" passHref>
               <a
@@ -185,7 +147,7 @@ export default function Navigation() {
                 </div>
                 <nav>
                   <ul className="space-y-4">
-                    <NavLinks />
+                    <NavLinks structure={structure} />
                     <li>
                       <Link href="/" passHref>
                         <a
